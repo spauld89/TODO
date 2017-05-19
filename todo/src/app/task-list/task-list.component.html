@@ -1,11 +1,16 @@
-<ol>
-  <li *ngFor="let task of taskList">
-    <ul>
-      <li>{{ task.name }}</li>
-      <li>{{ task.type }}</li>
-      <li>{{ task.creationDate | date:short  }}</li>
-      <li>{{ task.dueDate | date:short }}</li>
-      <li>{{ task.description}}</li>
-    </ul>
-  </li>
-</ol>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Creation Date</th>
+    <th>Due Date</th>
+    <th>Description</th>
+  </tr>
+  <tr *ngFor="let task of taskList" [ngClass]="task.type">
+    <td>{{ task.name }}</td>
+    <td>{{ task.type }}</td>
+    <td>{{ task.creationDate | date:short  }}</td>
+    <td>{{ task.dueDate | date:short }}</td>
+    <td>{{ task.description}}</td>
+  </tr>
+</table>

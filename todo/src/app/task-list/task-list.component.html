@@ -1,3 +1,11 @@
-<p>
-  task-list works!
-</p>
+<ol>
+  <li *ngFor="let task of taskList">
+    <ul>
+      <li>{{ task.name }}</li>
+      <li>{{ task.type }}</li>
+      <li>{{ task.creationDate | date:short  }}</li>
+      <li>{{ task.dueDate | date:short }}</li>
+      <li>{{ task.description}}</li>
+    </ul>
+  </li>
+</ol>

@@ -9,11 +9,11 @@
     </p>
     <h4>Creation date:</h4>
     <p>
-      {{ task.creationDate | date: short }}
+      {{ task.creationDate | date: 'yMdjm' }}
     </p>
     <h4>Due date:</h4>
     <p>
-      {{ task.dueDate | date: short }}
+      {{ task.dueDate | date: 'yMdjm' }}
     </p>
   </md-card-content>
 </md-card>

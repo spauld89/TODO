@@ -1,16 +1,6 @@
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Type</th>
-    <th>Creation Date</th>
-    <th>Due Date</th>
-    <th>Description</th>
-  </tr>
-  <tr *ngFor="let task of taskList" [ngClass]="task.type">
-    <td>{{ task.name }}</td>
-    <td>{{ task.type }}</td>
-    <td>{{ task.creationDate | date:short  }}</td>
-    <td>{{ task.dueDate | date:short }}</td>
-    <td>{{ task.description}}</td>
-  </tr>
-</table>
+<md-list>
+  <h3 md-subheader>Tasks</h3>
+  <a md-list-item href="#" *ngFor="let task of taskList" [ngClass]="task.type">
+    <h4 md-line>{{task.name}}</h4>
+  </a>
+</md-list>

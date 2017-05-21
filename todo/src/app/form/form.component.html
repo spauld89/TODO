@@ -1,0 +1,29 @@
+<form>
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="Task name" type="text">
+    </md-input-container>
+  </div>
+  <div>
+    <md-select placeholder="Task type" [(ngModel)]="taskType" name="taskType">
+      <md-option *ngFor="let type of taskTypes" [value]="type">
+        {{type}}
+      </md-option>
+    </md-select>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput [mdDatepicker]="picker" placeholder="Choose due date">
+      <button mdSuffix [mdDatepickerToggle]="picker"></button>
+    </md-input-container>
+    <md-datepicker #picker></md-datepicker>
+  </div>
+  <div>
+    <md-input-container>
+      <textarea mdInput placeholder="Task description"></textarea>
+    </md-input-container>
+  </div>
+  <div>
+    <button md-raised-button>Save</button>
+  </div>
+</form>

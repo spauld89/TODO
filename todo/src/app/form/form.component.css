@@ -1,0 +1,17 @@
+form{
+  width:400px;
+  margin:30px auto;
+}
+form > div{
+  padding:10px 0;
+}
+input,
+textarea,
+.mat-input-container,
+.mat-select{
+  display:block;
+  width:100%;
+}
+textarea{
+  height:100px;
+}

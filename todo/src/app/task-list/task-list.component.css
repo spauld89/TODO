@@ -1,15 +1,6 @@
-table{
-  width:80%;
-  margin:10px auto;
-  border:1px solid #ccc;
-  border-collapse: collapse;
-}
-td{
-  padding:5px 0;
-  border-bottom:1px solid #eee;
-}
-td:last-child{
-  border-bottom: 0;
+.mat-list{
+  width:500px;
+  margin:30px auto;
 }
 .normal{
   background-color:#fefefe;
@@ -23,4 +14,8 @@ td:last-child{
 .done{
   background-color: #cccccc;
   text-decoration: line-through;
+}
+.mat-mini-fab{
+  margin-right:15px;
+  vertical-align: middle;
 }

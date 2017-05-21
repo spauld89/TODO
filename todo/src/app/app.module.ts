@@ -6,11 +6,13 @@ import { MaterialModule } from './material/material.module';
 
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskListComponent
+    TaskListComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

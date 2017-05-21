@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule,
+  MdCardModule,
   MdDatepickerModule,
   MdGridListModule,
   MdIconModule,
@@ -15,6 +16,7 @@ import {
   imports: [
     CommonModule,
     MdButtonModule,
+    MdCardModule,
     MdDatepickerModule,
     MdGridListModule,
     MdIconModule,
@@ -26,6 +28,7 @@ import {
   ],
   exports: [
     MdButtonModule,
+    MdCardModule,
     MdDatepickerModule,
     MdGridListModule,
     MdIconModule,

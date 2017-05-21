@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+.normal{
+  background-color:#fefefe;
+}
+.urgent{
+  background-color: lightcoral;
+}
+.optional{
+  background-color: lightgreen;
+}
+.done{
+  background-color: #cccccc;
+  text-decoration: line-through;
+}
+.mat-card-header-text{
+  width:100%;
+}

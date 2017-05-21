@@ -2,19 +2,6 @@
   width:500px;
   margin:30px auto;
 }
-.normal{
-  background-color:#fefefe;
-}
-.urgent{
-  background-color: lightcoral;
-}
-.optional{
-  background-color: lightgreen;
-}
-.done{
-  background-color: #cccccc;
-  text-decoration: line-through;
-}
 .mat-mini-fab{
   margin-right:15px;
   vertical-align: middle;

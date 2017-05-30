@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 
 import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
+import { SearchComponent } from './main/search/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderComponent } from './header/header.component';
     TaskComponent,
     InfoComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

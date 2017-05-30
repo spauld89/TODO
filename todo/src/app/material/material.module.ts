@@ -9,8 +9,10 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule,
+  MdMenuModule,
   MdNativeDateModule,
-  MdSelectModule} from '@angular/material';
+  MdSelectModule,
+  MdToolbarModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -22,8 +24,10 @@ import {
     MdIconModule,
     MdInputModule,
     MdListModule,
+    MdMenuModule,
     MdNativeDateModule,
     MdSelectModule,
+    MdToolbarModule,
     NoopAnimationsModule
   ],
   exports: [
@@ -34,8 +38,10 @@ import {
     MdIconModule,
     MdInputModule,
     MdListModule,
+    MdMenuModule,
     MdNativeDateModule,
     MdSelectModule,
+    MdToolbarModule,
     NoopAnimationsModule
   ],
   declarations: []

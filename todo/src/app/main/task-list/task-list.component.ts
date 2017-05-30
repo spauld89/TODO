@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { taskList } from '../common/data/index';
+import { taskList } from '../../common/data/index';
 
 @Component({
   selector: 'todo-task-list',

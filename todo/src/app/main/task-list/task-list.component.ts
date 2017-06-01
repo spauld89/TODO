@@ -17,6 +17,9 @@ export class TaskListComponent implements OnInit {
   private set searchValue(searchValue: string){
     this._searchSubject$$.next(searchValue);
   }
+  public removeTask(index: number): void {
+    this.taskList.splice(index, 1);
+  }
   public ngOnInit(): void {
     this._searchSubject$$
       .debounceTime(300)

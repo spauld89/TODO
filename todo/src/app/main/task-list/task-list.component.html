@@ -1,6 +1,9 @@
 <md-list>
   <h3 md-subheader>{{ taskList.length > 0 ? "Tasks" : "No tasks found!"}}</h3>
-  <md-list-item href="#" *ngFor="let task of taskList | search: filter; index as i" [ngClass]="task.type">
-    <h4 md-line><button md-mini-fab (click)="removeTask(i)"><md-icon>delete</md-icon></button><a href="#">{{task.name}}</a></h4>
-  </md-list-item>
+  <div *ngFor="let task of taskList | search: filter; index as i" >
+    <md-list-item href="#" [ngClass]="task.type">
+      <h4 md-line><button md-mini-fab (click)="removeTask(i)"><md-icon>delete</md-icon></button><span (click)="showTask(i)">{{task.name}}</span></h4>
+    </md-list-item>
+    <todo-task [task]="task" *ngIf="task.show === true"></todo-task>
+  </div>
 </md-list>

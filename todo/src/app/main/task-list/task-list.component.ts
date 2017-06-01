@@ -20,6 +20,12 @@ export class TaskListComponent implements OnInit {
   public removeTask(index: number): void {
     this.taskList.splice(index, 1);
   }
+  public showTask(index: number): void {
+    for (let i: number = 0; i < this.taskList.length; i++) {
+      this.taskList[i].show = false;
+    }
+    this.taskList[index].show = true;
+  }
   public ngOnInit(): void {
     this._searchSubject$$
       .debounceTime(300)

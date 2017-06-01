@@ -6,3 +6,9 @@
   margin-right:15px;
   vertical-align: middle;
 }
+span{
+  text-decoration: underline;
+}
+span:hover{
+  text-decoration: none;
+}

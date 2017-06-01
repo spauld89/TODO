@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { taskList } from '../../../common/data/index';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'todo-task',
@@ -7,5 +6,6 @@ import { taskList } from '../../../common/data/index';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent {
-  public task: task = taskList[1];
+  @Input()
+  public task: task;
 }

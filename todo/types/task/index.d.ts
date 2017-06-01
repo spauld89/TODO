@@ -3,5 +3,6 @@ type task = {
   dueDate: number,
   name: string,
   description: string,
-  type: string
+  type: string,
+  show: boolean
 };

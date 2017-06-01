@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { taskTypes } from '../../common/data/task-types/index';
 
 @Component({
   selector: 'todo-form',
@@ -10,12 +11,7 @@ export class FormComponent  {
   public showForm: boolean;
   @Output()
   public onCloseForm: EventEmitter<boolean> = new EventEmitter();
-  public taskTypes: string[] = [
-    'normal',
-    'urgent',
-    'optional',
-    'done'
-  ];
+  public taskTypes: string[] = taskTypes;
   public taskType: string;
   public close(): void {
     this.onCloseForm.emit();

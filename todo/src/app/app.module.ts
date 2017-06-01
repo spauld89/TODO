@@ -14,6 +14,7 @@ import { MainComponent } from './main/main.component';
 import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './main/search/search/search.component';
+import { SearchPipe } from './common/pipes/search/search.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SearchComponent } from './main/search/search/search.component';
     InfoComponent,
     MainComponent,
     HeaderComponent,
-    SearchComponent
+    SearchComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

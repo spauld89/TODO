@@ -1,4 +1,4 @@
-<todo-search></todo-search>
-<todo-task-list></todo-task-list>
+<todo-search (onSearch)="onSearch($event)"></todo-search>
+<todo-task-list [searchValue]="searchValue"></todo-task-list>
 <todo-form></todo-form>
 <todo-task></todo-task>

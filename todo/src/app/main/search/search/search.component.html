@@ -1,5 +1,6 @@
 <div class="search">
   <md-input-container>
-    <input mdInput placeholder="Search task..." type="text">
+    <input mdInput placeholder="Search task..." type="text"
+           (input)="search($event.target.value)">
   </md-input-container>
 </div>

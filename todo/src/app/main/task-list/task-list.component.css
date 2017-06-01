@@ -2,13 +2,38 @@
   width:500px;
   margin:30px auto;
 }
+.mat-list-item{
+  cursor: pointer;
+}
 .mat-mini-fab{
   margin-right:15px;
   vertical-align: middle;
 }
-span{
-  text-decoration: underline;
+.normal{
+  background-color:#fefefe;
 }
-span:hover{
-  text-decoration: none;
+.normal:hover{
+  background-color: #e6e6e6;
+}
+.urgent{
+  background-color: #d9534f;
+}
+.urgent:hover{
+  background-color: #c9302c;
+}
+.optional{
+  background-color: #5cb85c;
+}
+.optional:hover{
+  background-color: #449d44;
+}
+.done{
+  background-color: #e6e6e6;
+  text-decoration: line-through;
+}
+.done:hover{
+  background-color: #d6d6d6;
+}
+.mat-card-header-text{
+  width:100%;
 }

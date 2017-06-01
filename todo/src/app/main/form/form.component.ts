@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'todo-form',
@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent  {
+  @Input()
+  public showForm: boolean;
+  @Output()
+  public onCloseForm: EventEmitter<boolean> = new EventEmitter();
   public taskTypes: string[] = [
     'normal',
     'urgent',
@@ -13,4 +17,7 @@ export class FormComponent  {
     'done'
   ];
   public taskType: string;
+  public close(): void {
+    this.onCloseForm.emit();
+  }
 }

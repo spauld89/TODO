@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { taskList } from '../../common/data/index';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
@@ -11,8 +11,10 @@ import 'rxjs/add/operator/debounceTime';
 export class TaskListComponent implements OnInit {
   public taskList: task[] = taskList;
   public filter: string;
-  private _searchSubject$$: Subject<string> = new Subject();
+  @Output()
+  public onShowForm: EventEmitter<boolean> = new EventEmitter();
 
+  private _searchSubject$$: Subject<string> = new Subject();
   @Input()
   private set searchValue(searchValue: string){
     this._searchSubject$$.next(searchValue);
@@ -25,6 +27,9 @@ export class TaskListComponent implements OnInit {
       this.taskList[i].show = false;
     }
     this.taskList[index].show = true;
+  }
+  public showForm(): void {
+    this.onShowForm.emit();
   }
   public ngOnInit(): void {
     this._searchSubject$$

@@ -2,19 +2,3 @@
 body{
   margin: 0;
 }
-.normal{
-  background-color:#fefefe;
-}
-.urgent{
-  background-color: lightcoral;
-}
-.optional{
-  background-color: lightgreen;
-}
-.done{
-  background-color: #cccccc;
-  text-decoration: line-through;
-}
-.mat-card-header-text{
-  width:100%;
-}

@@ -1,6 +1,14 @@
+h3{
+  width:500px;
+  margin:20px auto 10px;
+  font:bold 18px Roboto,"Helvetica Neue",sans-serif;
+}
 .mat-list{
   width:500px;
-  margin:30px auto;
+  margin:0 auto 30px;
+}
+.list-item-wrapper{
+  position: relative;
 }
 .mat-list-item{
   cursor: pointer;
@@ -36,4 +44,9 @@
 }
 .mat-card-header-text{
   width:100%;
+}
+.mat-checkbox{
+  position:absolute;
+  right:15px;
+  top:15px;
 }

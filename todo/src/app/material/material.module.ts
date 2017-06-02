@@ -4,6 +4,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdButtonModule,
   MdCardModule,
+  MdCheckboxModule,
   MdDatepickerModule,
   MdGridListModule,
   MdIconModule,
@@ -19,6 +20,7 @@ import {
     CommonModule,
     MdButtonModule,
     MdCardModule,
+    MdCheckboxModule,
     MdDatepickerModule,
     MdGridListModule,
     MdIconModule,
@@ -33,6 +35,7 @@ import {
   exports: [
     MdButtonModule,
     MdCardModule,
+    MdCheckboxModule,
     MdDatepickerModule,
     MdGridListModule,
     MdIconModule,

@@ -1,16 +1,18 @@
+<h3 md-subheader>{{ taskList.length > 0 ? "Tasks" : "No tasks found!"}}
+  <button md-icon-button (click)="showForm()">
+    <md-icon>add</md-icon></button>
+</h3>
 <md-list>
-  <h3 md-subheader>{{ taskList.length > 0 ? "Tasks" : "No tasks found!"}}
-    <button md-icon-button (click)="showForm()">
-      <md-icon>add</md-icon></button>
-  </h3>
   <div *ngFor="let task of taskList | search: filter; index as i" >
-    <md-list-item [ngClass]="task.type" (click)="showTask(i)">
-      <h4 md-line><button md-icon-button (click)="removeTask(i)">
-        <md-icon>delete</md-icon></button>
-        <span>{{task.name}}</span>
-      </h4>
-    </md-list-item>
-
+    <div class="list-item-wrapper">
+      <md-list-item [ngClass]="task.markedAsDone === true ? 'done' : task.type" (click)="showTask(i)">
+        <h4 md-line><button md-icon-button (click)="removeTask(i)">
+          <md-icon>delete</md-icon></button>
+          <span>{{task.name}}</span>
+        </h4>
+      </md-list-item>
+      <md-checkbox [(ngModel)]="task.markedAsDone"></md-checkbox>
+    </div>
     <todo-task [task]="task" *ngIf="task.show === true"></todo-task>
   </div>
 </md-list>

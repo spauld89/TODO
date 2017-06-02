@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { taskTypes } from '../../common/data/task-types/index';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -24,16 +24,19 @@ export class FormComponent  {
     public fb: FormBuilder,
     private datePipe: DatePipe) {
     this.form = this.fb.group({
-      name: '',
-      type: '',
+      name: ['', Validators.required ],
+      type: taskTypes[0],
       creationDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
-      dueDate: '',
-      description: '',
+      dueDate: ['', Validators.required ],
+      description: ['', Validators.required ],
       show: false
     });
   }
 
   public submit(): void {
+    if (this.form.status === 'INVALID') {
+      return;
+    }
     this.form.value.dueDate = this.datePipe.transform(this.form.value.dueDate, 'yyyy-MM-dd');
     this.save(this.form.value);
   }

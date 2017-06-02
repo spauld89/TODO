@@ -1,16 +1,16 @@
 <div class="popup-bg">
-  <form>
+  <form [formGroup]="form">
     <div class="close">
       <button md-icon-button (click)="close()">
       <md-icon>close</md-icon></button>
     </div>
     <div>
       <md-input-container>
-        <input mdInput placeholder="Task name" type="text">
+        <input mdInput placeholder="Task name" type="text" formControlName="name">
       </md-input-container>
     </div>
     <div>
-      <md-select placeholder="Task type" [(ngModel)]="taskType" name="taskType">
+      <md-select placeholder="Task type" formControlName="type">
         <md-option *ngFor="let type of taskTypes" [value]="type">
           {{type}}
         </md-option>
@@ -18,18 +18,18 @@
     </div>
     <div>
       <md-input-container>
-        <input mdInput [mdDatepicker]="picker" placeholder="Choose due date">
+        <input mdInput [mdDatepicker]="picker" placeholder="Choose due date" formControlName="dueDate" readonly [min]="currentDate">
         <button mdSuffix [mdDatepickerToggle]="picker"></button>
       </md-input-container>
-      <md-datepicker #picker></md-datepicker>
+      <md-datepicker #picker [startAt]="currentDate"></md-datepicker>
     </div>
     <div>
       <md-input-container>
-        <textarea mdInput placeholder="Task description"></textarea>
+        <textarea mdInput placeholder="Task description" formControlName="description"></textarea>
       </md-input-container>
     </div>
     <div>
-      <button md-raised-button>Save</button>
+      <button md-raised-button (click)="submit()">Save</button>
     </div>
   </form>
 </div>

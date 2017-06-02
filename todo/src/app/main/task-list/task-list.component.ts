@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { taskList } from '../../common/data/demo-tasks/index';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'todo-task-list',
@@ -15,9 +16,14 @@ export class TaskListComponent implements OnInit {
   public onShowForm: EventEmitter<boolean> = new EventEmitter();
 
   private _searchSubject$$: Subject<string> = new Subject();
+  private _taskList$$: Subject<task> = new Subject();
   @Input()
   private set searchValue(searchValue: string){
     this._searchSubject$$.next(searchValue);
+  }
+  @Input()
+  private set newTask(newTask: task){
+    this._taskList$$.next(newTask);
   }
   public removeTask(index: number): void {
     this.taskList.splice(index, 1);
@@ -36,6 +42,10 @@ export class TaskListComponent implements OnInit {
       .debounceTime(300)
       .subscribe((searchValue: string) => {
         this.filter = searchValue;
+      });
+    this._taskList$$
+      .subscribe((newTask: task) => {
+        this.taskList.unshift(newTask);
       });
   }
 }

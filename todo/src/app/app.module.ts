@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 
@@ -15,6 +15,7 @@ import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './main/search/search/search.component';
 import { SearchPipe } from './common/pipes/search/search.pipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,10 @@ import { SearchPipe } from './common/pipes/search/search.pipe';
     BrowserModule,
     FormsModule,
     MaterialModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,3 @@
 <todo-search (onSearch)="onSearch($event)"></todo-search>
-<todo-task-list (onShowForm)="onShowForm()" [searchValue]="searchValue"></todo-task-list>
-<todo-form *ngIf="showForm" (onCloseForm)="onCloseForm()" [showForm]="showForm"></todo-form>
+<todo-task-list (onShowForm)="onShowForm()" [searchValue]="searchValue" [newTask]="newTask"></todo-task-list>
+<todo-form *ngIf="showForm" (onCloseForm)="onCloseForm()" (onSaveTask)="onSaveTask($event)" [showForm]="showForm"></todo-form>

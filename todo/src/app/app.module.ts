@@ -13,7 +13,7 @@ import { MainComponent } from './main/main.component';
 
 import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './main/search/search/search.component';
+import { SearchComponent } from './main/search/search.component';
 import { SearchPipe } from './common/pipes/search/search.pipe';
 import { DatePipe } from '@angular/common';
 

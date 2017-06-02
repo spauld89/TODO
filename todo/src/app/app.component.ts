@@ -14,10 +14,3 @@ export class AppComponent {
   ];
 }
 
-// TODO make components: header with task type filter and search, main task list, task addition form, task page
-// Task list component:
-// task options: creation date, due date, type;
-// task types: urgent, normal, optional, done;
-// task styles: urgent - red, normal - white, optional - green, done - grey
-// task methods: add, delete, mark as done
-

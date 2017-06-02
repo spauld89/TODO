@@ -1,3 +1,9 @@
+h4{
+  margin-bottom:5px;
+}
+p{
+  margin-top:0;
+}
 .mat-card{
   box-sizing: border-box;
   margin:30px auto;

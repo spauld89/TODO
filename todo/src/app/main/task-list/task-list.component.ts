@@ -28,9 +28,9 @@ export class TaskListComponent implements OnInit {
     this.taskList.splice(index, 1);
   }
   public showTask(index: number): void {
-    for (let i: number = 0; i < this.taskList.length; i++) {
-      this.taskList[i].show = false;
-    }
+    this.taskList.map((task: task): void => {
+      task.show = false;
+    });
     this.taskList[index].show = true;
   }
   public showForm(): void {

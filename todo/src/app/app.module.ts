@@ -16,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './main/search/search.component';
 import { SearchPipe } from './common/pipes/search/search.pipe';
 import { DatePipe } from '@angular/common';
+import { StorageService } from './common/services/storage.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

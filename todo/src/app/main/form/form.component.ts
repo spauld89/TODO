@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { taskTypes } from '../../common/data/task-types/index';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
+import { StorageService } from '../../common/services/storage.service';
 
 @Component({
   selector: 'todo-form',
@@ -22,6 +23,7 @@ export class FormComponent  {
 
   public constructor(
     public fb: FormBuilder,
+    private _storageService: StorageService,
     private datePipe: DatePipe) {
     this.form = this.fb.group({
       name: ['', Validators.required ],
@@ -42,9 +44,25 @@ export class FormComponent  {
   }
   public save(task: task): void {
     this.onSaveTask.emit(task);
+    this._addTaskId(task);
+    this._storageService.setData(task);
     this.close();
   }
   public close(): void {
     this.onCloseForm.emit();
+  }
+  private _addTaskId(task: task): void {
+    task.id = this._generateId();
+  }
+  private _generateId(): number {
+    const taskList: task[] = this._storageService.getData();
+    const id: number = Math.floor(Math.random() * 9999);
+    taskList.forEach((task: task) => {
+      if (task.id === id) {
+        this._generateId();
+        return;
+      }
+    });
+    return id;
   }
 }

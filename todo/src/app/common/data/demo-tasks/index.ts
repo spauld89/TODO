@@ -1,5 +1,6 @@
 export const taskList: task[] = [
   {
+    id: 1,
     creationDate: 1495220794137,
     dueDate: 1500930000000,
     name: 'Normal task',
@@ -9,6 +10,7 @@ export const taskList: task[] = [
     markerAsDone: false
   },
   {
+    id: 2,
     creationDate: 1495220805985,
     dueDate: 1500930000000,
     name: 'Urgent task',
@@ -18,6 +20,7 @@ export const taskList: task[] = [
     markerAsDone: false
   },
   {
+    id: 3,
     creationDate: 1495220812856,
     dueDate: 1500930000000,
     name: 'Optional task',

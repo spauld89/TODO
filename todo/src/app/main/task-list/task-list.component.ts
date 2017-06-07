@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { taskList } from '../../common/data/demo-tasks/index';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
+import { StorageService } from '../../common/services/storage.service';
 
 @Component({
   selector: 'todo-task-list',
@@ -9,7 +9,7 @@ import 'rxjs/add/operator/debounceTime';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  public taskList: task[] = taskList;
+  public taskList: task[];
   public filter: string;
   @Output()
   public onShowForm: EventEmitter<boolean> = new EventEmitter();
@@ -24,6 +24,9 @@ export class TaskListComponent implements OnInit {
   private set newTask(newTask: task){
     this._taskList$$.next(newTask);
   }
+
+  public constructor (private _storageService: StorageService) {}
+
   public removeTask(index: number): void {
     this.taskList.splice(index, 1);
   }
@@ -37,6 +40,7 @@ export class TaskListComponent implements OnInit {
     this.onShowForm.emit();
   }
   public ngOnInit(): void {
+    this.taskList = this._storageService.getData();
     this._searchSubject$$
       .debounceTime(300)
       .subscribe((searchValue: string) => {

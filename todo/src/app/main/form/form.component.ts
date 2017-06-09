@@ -45,7 +45,7 @@ export class FormComponent  {
   public save(task: task): void {
     this.onSaveTask.emit(task);
     this._addTaskId(task);
-    this._storageService.setData(task);
+    this._storageService.setData(task, 'add');
     this.close();
   }
   public close(): void {

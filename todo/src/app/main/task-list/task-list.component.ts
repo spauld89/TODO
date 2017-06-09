@@ -27,14 +27,18 @@ export class TaskListComponent implements OnInit {
 
   public constructor (private _storageService: StorageService) {}
 
-  public removeTask(index: number): void {
+  public removeTask(index: number, task: task): void {
     this.taskList.splice(index, 1);
+    this._storageService.setData(task, 'remove');
   }
   public showTask(index: number): void {
     this.taskList.map((task: task): void => {
       task.show = false;
     });
     this.taskList[index].show = true;
+  }
+  public updateTask(task: task): void {
+    this._storageService.setData(task, 'update');
   }
   public showForm(): void {
     this.onShowForm.emit();

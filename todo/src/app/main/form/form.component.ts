@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { taskTypes } from '../../common/data/task-types/index';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { StorageService } from '../../common/services/storage.service';
 
@@ -9,7 +9,7 @@ import { StorageService } from '../../common/services/storage.service';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-export class FormComponent  {
+export class FormComponent {
   @Input()
   public showForm: boolean;
   @Output()
@@ -19,6 +19,7 @@ export class FormComponent  {
 
   public taskTypes: string[] = taskTypes;
   public currentDate: Date = new Date();
+  public startDate: Date;
   public form: FormGroup;
 
   public constructor(
@@ -29,7 +30,7 @@ export class FormComponent  {
       name: ['', Validators.required ],
       type: taskTypes[0],
       creationDate: this.datePipe.transform(new Date(), 'yyyy-MM-dd'),
-      dueDate: ['', Validators.required ],
+      dueDate: ['', [Validators.required, this.dateValidator] ],
       description: ['', Validators.required ],
       show: false
     });
@@ -52,6 +53,19 @@ export class FormComponent  {
 
   public close(): void {
     this.onCloseForm.emit();
+  }
+
+  public dateValidator(control: FormControl): { [key: string]: boolean } {
+    const value: Date = control.value || '';
+    const currentDate: Date = new Date();
+    const startDate: Date = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate(),
+      0, 0, 0
+    );
+    const valid: boolean = value >= startDate;
+    return (valid ? null : { minerror: true });
   }
 
   private _addTaskId(task: task): void {

@@ -18,7 +18,7 @@
     </div>
     <div>
       <md-input-container>
-        <input mdInput [mdDatepicker]="picker" placeholder="Choose due date" formControlName="dueDate" readonly [min]="currentDate">
+        <input mdInput [mdDatepicker]="picker" placeholder="Choose due date" formControlName="dueDate" readonly>
         <button mdSuffix [mdDatepickerToggle]="picker"></button>
       </md-input-container>
       <md-datepicker #picker [startAt]="currentDate"></md-datepicker>

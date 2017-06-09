@@ -12,6 +12,16 @@ export class StorageService {
     return this._data = JSON.parse(storage);
   }
 
+  public getTaskById(id: number): task {
+    const tasks: task[] = this.getData();
+    tasks.forEach((task: task, i: number) => {
+      if (tasks[i].id === id) {
+        return task;
+      }
+    });
+    return;
+  }
+
   public setData(task: task, action: string): void {
     switch (action) {
       case 'add':
@@ -34,6 +44,4 @@ export class StorageService {
     }
     localStorage.setItem('tasks', JSON.stringify(this._data));
   }
-
 }
-// TODO: emit set event either here or in components and make task-list.component get tasks on it;

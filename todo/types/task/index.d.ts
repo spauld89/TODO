@@ -5,5 +5,5 @@ type task = {
   name: string,
   description: string,
   type: string,
-  markerAsDone: boolean
+  markedAsDone: boolean
 };

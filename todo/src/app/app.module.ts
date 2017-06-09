@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { TaskListComponent } from './main//task-list/task-list.component';
 import { FormComponent } from './main/form/form.component';
 import { TaskComponent } from './main/task-list/task/task.component';
-import { InfoComponent } from './info/info.component';
 import { MainComponent } from './main/main.component';
 
 import { routes } from './routes';
@@ -24,7 +23,6 @@ import { StorageService } from './common/services/storage.service';
     TaskListComponent,
     FormComponent,
     TaskComponent,
-    InfoComponent,
     MainComponent,
     HeaderComponent,
     SearchComponent,

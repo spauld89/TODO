@@ -11,11 +11,13 @@ import { StorageService } from '../../common/services/storage.service';
 export class TaskListComponent implements OnInit {
   public taskList: task[];
   public filter: string;
+
   @Output()
   public onShowForm: EventEmitter<boolean> = new EventEmitter();
 
   private _searchSubject$$: Subject<string> = new Subject();
   private _taskList$$: Subject<task> = new Subject();
+
   @Input()
   private set searchValue(searchValue: string){
     this._searchSubject$$.next(searchValue);
@@ -31,18 +33,22 @@ export class TaskListComponent implements OnInit {
     this.taskList.splice(index, 1);
     this._storageService.setData(task, 'remove');
   }
+
   public showTask(index: number): void {
     this.taskList.map((task: task): void => {
       task.show = false;
     });
     this.taskList[index].show = true;
   }
+
   public updateTask(task: task): void {
     this._storageService.setData(task, 'update');
   }
+
   public showForm(): void {
     this.onShowForm.emit();
   }
+
   public ngOnInit(): void {
     this.taskList = this._storageService.getData();
     this._searchSubject$$

@@ -42,18 +42,22 @@ export class FormComponent  {
     this.form.value.dueDate = this.datePipe.transform(this.form.value.dueDate, 'yyyy-MM-dd');
     this.save(this.form.value);
   }
+
   public save(task: task): void {
     this.onSaveTask.emit(task);
     this._addTaskId(task);
     this._storageService.setData(task, 'add');
     this.close();
   }
+
   public close(): void {
     this.onCloseForm.emit();
   }
+
   private _addTaskId(task: task): void {
     task.id = this._generateId();
   }
+
   private _generateId(): number {
     const taskList: task[] = this._storageService.getData();
     const id: number = Math.floor(Math.random() * 9999);

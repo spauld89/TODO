@@ -14,12 +14,13 @@ export class StorageService {
 
   public getTaskById(id: number): task {
     const tasks: task[] = this.getData();
+    let foundTask: task;
     tasks.forEach((task: task, i: number) => {
       if (tasks[i].id === id) {
-        return task;
+        foundTask = task;
       }
     });
-    return;
+    return foundTask;
   }
 
   public setData(task: task, action: string): void {

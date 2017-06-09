@@ -7,7 +7,7 @@ p{
 .mat-card{
   box-sizing: border-box;
   margin:30px auto;
-  width:100%;
+  width:500px;
 }
 .mat-card-header .mat-card-title{
   font-size:24px;

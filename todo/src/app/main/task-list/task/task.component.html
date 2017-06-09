@@ -1,6 +1,9 @@
 <md-card>
   <md-card-header>
-    <md-card-title>{{ task.name }}</md-card-title>
+    <md-card-title>
+      <md-checkbox *ngIf="task.markedAsDone" checked="checked" disabled></md-checkbox>
+      {{ task.name }}
+    </md-card-title>
     <md-card-subtitle [ngClass]="task.type">{{ task.type }}</md-card-subtitle>
   </md-card-header>
   <md-card-content>
@@ -16,4 +19,7 @@
       {{ task.dueDate | date: 'yyyy-MM-dd' }}
     </p>
   </md-card-content>
+  <md-card-actions>
+    <button md-button [routerLink]="['main']">Back to list</button>
+  </md-card-actions>
 </md-card>

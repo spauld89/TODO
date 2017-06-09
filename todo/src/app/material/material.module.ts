@@ -10,7 +10,6 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule,
-  MdMenuModule,
   MdNativeDateModule,
   MdSelectModule,
   MdToolbarModule} from '@angular/material';
@@ -26,7 +25,6 @@ import {
     MdIconModule,
     MdInputModule,
     MdListModule,
-    MdMenuModule,
     MdNativeDateModule,
     MdSelectModule,
     MdToolbarModule,
@@ -41,7 +39,6 @@ import {
     MdIconModule,
     MdInputModule,
     MdListModule,
-    MdMenuModule,
     MdNativeDateModule,
     MdSelectModule,
     MdToolbarModule,

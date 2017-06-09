@@ -5,7 +5,7 @@
 <md-list>
   <div *ngFor="let task of taskList | search: filter; index as i" >
     <div class="list-item-wrapper">
-      <md-list-item [ngClass]="task.markedAsDone === true ? 'done' : task.type" (click)="showTask(i)">
+      <md-list-item [ngClass]="task.markedAsDone === true ? 'done' : task.type" (click)="goToTask(task.id)">
         <h4 md-line><button md-icon-button (click)="removeTask(i, task)">
           <md-icon>delete</md-icon></button>
           <span>{{task.name}}</span>
@@ -13,6 +13,5 @@
       </md-list-item>
       <md-checkbox [(ngModel)]="task.markedAsDone" (change)="updateTask(task)"></md-checkbox>
     </div>
-    <todo-task [task]="task" *ngIf="task.show === true"></todo-task>
   </div>
 </md-list>

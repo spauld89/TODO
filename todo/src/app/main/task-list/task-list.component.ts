@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/debounceTime';
 import { StorageService } from '../../common/services/storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'todo-task-list',
@@ -27,18 +28,14 @@ export class TaskListComponent implements OnInit {
     this._taskList$$.next(newTask);
   }
 
-  public constructor (private _storageService: StorageService) {}
+  public constructor (
+    private _storageService: StorageService,
+    private _router: Router
+  ) {}
 
   public removeTask(index: number, task: task): void {
     this.taskList.splice(index, 1);
     this._storageService.setData(task, 'remove');
-  }
-
-  public showTask(index: number): void {
-    this.taskList.map((task: task): void => {
-      task.show = false;
-    });
-    this.taskList[index].show = true;
   }
 
   public updateTask(task: task): void {
@@ -47,6 +44,10 @@ export class TaskListComponent implements OnInit {
 
   public showForm(): void {
     this.onShowForm.emit();
+  }
+
+  public goToTask(taskId: number): void {
+    this._router.navigate(['task'], { queryParams: { id: taskId } });
   }
 
   public ngOnInit(): void {

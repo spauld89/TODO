@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import { StorageService } from '../../../common/services/storage.service';
 
 @Component({
@@ -14,13 +14,20 @@ export class TaskComponent implements OnInit {
 
   public constructor(
     private _route: ActivatedRoute,
+    private _router: Router,
     private _storageService: StorageService
   ) {}
 
   public ngOnInit(): void {
+    let task: task;
     this._route.queryParams.subscribe((params: Params) => {
       this.id = Number(params.id);
-      this.task = this._storageService.getTaskById(this.id);
+      task = this._storageService.getTaskById(this.id);
+      if (task === undefined) {
+        this._router.navigate(['main']);
+        return;
+      }
+      this.task = task;
     });
   }
 }

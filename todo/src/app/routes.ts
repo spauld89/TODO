@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
-import { MainComponent } from './main/main.component';
-import { TaskComponent } from './main/task-list/task/task.component';
+import { MainComponent } from './content/main/main.component';
+import { TaskComponent } from './content/task/task.component';
 
 export const routes: Route[] = [
   {

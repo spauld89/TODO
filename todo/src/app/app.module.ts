@@ -5,18 +5,19 @@ import { MaterialModule } from './material/material.module';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { TaskListComponent } from './main//task-list/task-list.component';
-import { FormComponent } from './main/form/form.component';
-import { TaskComponent } from './main/task-list/task/task.component';
-import { MainComponent } from './main/main.component';
+import { TaskListComponent } from './content/main/task-list/task-list.component';
+import { FormComponent } from './content/main/form/form.component';
+import { TaskComponent } from './content/task/task.component';
+import { MainComponent } from './content/main/main.component';
 
 import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
-import { SearchComponent } from './main/search/search.component';
+import { SearchComponent } from './content/main/search/search.component';
 import { SearchPipe } from './common/pipes/search/search.pipe';
 import { DatePipe } from '@angular/common';
 import { StorageService } from './common/services/storage.service';
 import { FormService } from './common/services/form.service';
+import { ContentComponent } from './content/content.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FormService } from './common/services/form.service';
     MainComponent,
     HeaderComponent,
     SearchComponent,
-    SearchPipe
+    SearchPipe,
+    ContentComponent
   ],
   imports: [
     BrowserModule,

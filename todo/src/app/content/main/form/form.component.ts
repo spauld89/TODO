@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { taskTypes } from '../../common/data/task-types/index';
+import { taskTypes } from '../../../common/data/task-types/index';
 import { FormGroup } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { StorageService } from '../../common/services/storage.service';
-import { FormService } from '../../common/services/form.service';
+import { StorageService } from '../../../common/services/storage.service';
+import { FormService } from '../../../common/services/form.service';
 
 @Component({
   selector: 'todo-form',

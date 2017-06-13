@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import { StorageService } from '../../../common/services/storage.service';
+import { StorageService } from '../../common/services/storage.service';
 
 @Component({
   selector: 'todo-task',

@@ -16,6 +16,7 @@ import { SearchComponent } from './main/search/search.component';
 import { SearchPipe } from './common/pipes/search/search.pipe';
 import { DatePipe } from '@angular/common';
 import { StorageService } from './common/services/storage.service';
+import { FormService } from './common/services/form.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,11 @@ import { StorageService } from './common/services/storage.service';
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [DatePipe, StorageService],
+  providers: [
+    DatePipe,
+    StorageService,
+    FormService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

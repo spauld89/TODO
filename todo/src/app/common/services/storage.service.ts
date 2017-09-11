@@ -9,7 +9,13 @@ export class StorageService {
     if (storage === null) {
       return this._data = [];
     }
-    return this._data = JSON.parse(storage);
+    try {
+      return this._data = JSON.parse(storage);
+    } catch (error) {
+      console.error(error);
+      window.alert('Error: cannot parse the data from the storage!');
+      return this._data = [];
+    }
   }
 
   public getTaskById(id: number): task {
@@ -43,6 +49,11 @@ export class StorageService {
         });
         break;
     }
-    localStorage.setItem('tasks', JSON.stringify(this._data));
+    try {
+      localStorage.setItem('tasks', JSON.stringify(this._data));
+    } catch (error) {
+      console.log(error);
+      window.alert('Error: cannot write the task to the storage!');
+    }
   }
 }

@@ -18,7 +18,7 @@ export class FormComponent implements OnInit {
   @Output()
   public onSaveTask: EventEmitter<task> = new EventEmitter();
 
-  public taskTypes: string[] = taskTypes;
+  public taskTypes: taskType[] = taskTypes;
   public currentDate: Date = new Date();
   public form: FormGroup;
 

@@ -1,5 +1,1 @@
-export const taskTypes: string[] = [
-  'normal',
-  'urgent',
-  'optional'
-];
+export const taskTypes: taskType[] = ['normal', 'urgent', 'optional'];

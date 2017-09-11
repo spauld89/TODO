@@ -9,15 +9,17 @@ import { TaskListComponent } from './content/main/task-list/task-list.component'
 import { FormComponent } from './content/main/form/form.component';
 import { TaskComponent } from './content/task/task.component';
 import { MainComponent } from './content/main/main.component';
-
-import { routes } from './routes';
 import { HeaderComponent } from './header/header.component';
 import { SearchComponent } from './content/main/search/search.component';
+
 import { SearchPipe } from './common/pipes/search/search.pipe';
 import { DatePipe } from '@angular/common';
+
 import { StorageService } from './common/services/storage.service';
 import { FormService } from './common/services/form.service';
 import { ContentComponent } from './content/content.component';
+
+import { routes } from './routes';
 
 @NgModule({
   declarations: [
